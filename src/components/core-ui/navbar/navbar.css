@@ -1,0 +1,80 @@
+.navbar {
+  height: 6.5rem;
+  position: absolute; /* Changed from absolute to fixed to stay at the top */
+  background-color: transparent;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0 3rem; /* Added padding here for simplicity */
+  box-sizing: border-box; /* Ensures padding is included in width */
+  transition: background-color 0.3s; /* Smooth transition for bg color */
+}
+
+.navbar--container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  /* Removed margin-top to align items vertically center */
+}
+
+.navbar--container > h1 {
+  font-family: "BestermindRegular";
+  color: #A6E1FA; /* Updated color for better visibility */
+  font-size: 2.5rem; /* Adjustable based on preference */
+  user-select: none;
+  transition: color 0.3s; /* Smooth transition for color */
+}
+
+/* Menu list styles */
+.header ul.menu {
+  display: flex; /* Use flexbox for horizontal layout */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header li {
+  padding: 0 1rem; /* Add padding to each nav item */
+}
+
+.header li a {
+  font-size: 1.2rem; /* Updated font size */
+  color: #FFFFFF; /* Lighter text for better visibility */
+  text-decoration: none;
+  padding: 10px 15px; /* Padding for clickable area */
+  transition: color 0.3s, background-color 0.3s; /* Smooth transitions */
+}
+
+.header li a:hover,
+.header li a:focus { /* Added focus for accessibility */
+  color: #A6E1FA; /* Hover/focus color */
+  background-color: rgba(255, 255, 255, 0.1); /* Slight bg highlight */
+}
+
+@media only screen and (max-width: 768px) {
+  .header ul.menu {
+    display: block; /* Stack nav items under each other on smaller screens */
+  }
+
+  .navbar--container > h1 {
+    font-size: 2rem; /* Smaller font size for small screens */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .navbar {
+    height: auto; /* Adjust height for small screens */
+    padding: 1rem; /* Less padding on small screens */
+  }
+
+  .navbar--container > h1 {
+    font-size: 1.5rem; /* Even smaller font size for very small screens */
+  }
+
+  .header li a {
+    font-size: 1rem; /* Smaller font size for nav links on small screens */
+  }
+}
